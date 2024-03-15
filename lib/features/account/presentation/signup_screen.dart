@@ -1,6 +1,6 @@
-import 'package:ecommerce_app/features/account/screen/login_screen.dart';
+import 'package:ecommerce_app/features/account/presentation/login_screen.dart';
 import 'package:ecommerce_app/shared/widgets/constants.dart';
-import 'package:ecommerce_app/features/account/screen/widgets/textfield_widget.dart';
+import 'package:ecommerce_app/features/account/presentation/widgets/textfield_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

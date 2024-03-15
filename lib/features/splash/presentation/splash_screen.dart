@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/features/account/screen/widgets/signup_buttons.dart';
+import 'package:ecommerce_app/features/account/presentation/widgets/signup_buttons.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
