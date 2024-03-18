@@ -131,7 +131,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            BlocProvider.of<AuthenticationBloc>(context)
+                                .add(const GoogleSignInAuthEvent());
+                          },
                           icon: Image.asset('assets/icons/google_icon.png'),
                         ),
                         IconButton(

@@ -6,6 +6,10 @@ class AuthenticationState {
   const factory AuthenticationState.loading() = LoadingAuthState;
   const factory AuthenticationState.authenticated(UserModel? user) =
       AuthenticatedAuthState;
+  const factory AuthenticationState.googleSignInSuccess(
+      UserCredential? userCredential) = GoogleSignInSuccessAuthState;
+  const factory AuthenticationState.googleSignInFailure() =
+      GoogleSignInFailureAuthState;
   const factory AuthenticationState.unauthenticated() =
       UnauthenticatedAuthState;
   const factory AuthenticationState.error(String errorMessage) = ErrorAuthState;

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 class PrimaryTextFieldWidget extends StatelessWidget {
   final TextEditingController controller;
+
   const PrimaryTextFieldWidget({required this.controller, super.key});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: controller,
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(horizontal: 10.0),

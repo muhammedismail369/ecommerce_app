@@ -653,6 +653,9 @@ mixin _$AuthenticationState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(UserModel? user) authenticated,
+    required TResult Function(UserCredential? userCredential)
+        googleSignInSuccess,
+    required TResult Function() googleSignInFailure,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) =>
@@ -662,6 +665,8 @@ mixin _$AuthenticationState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UserModel? user)? authenticated,
+    TResult? Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult? Function()? googleSignInFailure,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) =>
@@ -671,6 +676,8 @@ mixin _$AuthenticationState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UserModel? user)? authenticated,
+    TResult Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult Function()? googleSignInFailure,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -681,6 +688,10 @@ mixin _$AuthenticationState {
     required TResult Function(InitialAuthState value) initial,
     required TResult Function(LoadingAuthState value) loading,
     required TResult Function(AuthenticatedAuthState value) authenticated,
+    required TResult Function(GoogleSignInSuccessAuthState value)
+        googleSignInSuccess,
+    required TResult Function(GoogleSignInFailureAuthState value)
+        googleSignInFailure,
     required TResult Function(UnauthenticatedAuthState value) unauthenticated,
     required TResult Function(ErrorAuthState value) error,
   }) =>
@@ -690,6 +701,8 @@ mixin _$AuthenticationState {
     TResult? Function(InitialAuthState value)? initial,
     TResult? Function(LoadingAuthState value)? loading,
     TResult? Function(AuthenticatedAuthState value)? authenticated,
+    TResult? Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult? Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult? Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult? Function(ErrorAuthState value)? error,
   }) =>
@@ -699,6 +712,8 @@ mixin _$AuthenticationState {
     TResult Function(InitialAuthState value)? initial,
     TResult Function(LoadingAuthState value)? loading,
     TResult Function(AuthenticatedAuthState value)? authenticated,
+    TResult Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult Function(ErrorAuthState value)? error,
     required TResult orElse(),
@@ -765,6 +780,9 @@ class _$InitialAuthStateImpl implements InitialAuthState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(UserModel? user) authenticated,
+    required TResult Function(UserCredential? userCredential)
+        googleSignInSuccess,
+    required TResult Function() googleSignInFailure,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) {
@@ -777,6 +795,8 @@ class _$InitialAuthStateImpl implements InitialAuthState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UserModel? user)? authenticated,
+    TResult? Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult? Function()? googleSignInFailure,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) {
@@ -789,6 +809,8 @@ class _$InitialAuthStateImpl implements InitialAuthState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UserModel? user)? authenticated,
+    TResult Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult Function()? googleSignInFailure,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -805,6 +827,10 @@ class _$InitialAuthStateImpl implements InitialAuthState {
     required TResult Function(InitialAuthState value) initial,
     required TResult Function(LoadingAuthState value) loading,
     required TResult Function(AuthenticatedAuthState value) authenticated,
+    required TResult Function(GoogleSignInSuccessAuthState value)
+        googleSignInSuccess,
+    required TResult Function(GoogleSignInFailureAuthState value)
+        googleSignInFailure,
     required TResult Function(UnauthenticatedAuthState value) unauthenticated,
     required TResult Function(ErrorAuthState value) error,
   }) {
@@ -817,6 +843,8 @@ class _$InitialAuthStateImpl implements InitialAuthState {
     TResult? Function(InitialAuthState value)? initial,
     TResult? Function(LoadingAuthState value)? loading,
     TResult? Function(AuthenticatedAuthState value)? authenticated,
+    TResult? Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult? Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult? Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult? Function(ErrorAuthState value)? error,
   }) {
@@ -829,6 +857,8 @@ class _$InitialAuthStateImpl implements InitialAuthState {
     TResult Function(InitialAuthState value)? initial,
     TResult Function(LoadingAuthState value)? loading,
     TResult Function(AuthenticatedAuthState value)? authenticated,
+    TResult Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult Function(ErrorAuthState value)? error,
     required TResult orElse(),
@@ -885,6 +915,9 @@ class _$LoadingAuthStateImpl implements LoadingAuthState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(UserModel? user) authenticated,
+    required TResult Function(UserCredential? userCredential)
+        googleSignInSuccess,
+    required TResult Function() googleSignInFailure,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) {
@@ -897,6 +930,8 @@ class _$LoadingAuthStateImpl implements LoadingAuthState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UserModel? user)? authenticated,
+    TResult? Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult? Function()? googleSignInFailure,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) {
@@ -909,6 +944,8 @@ class _$LoadingAuthStateImpl implements LoadingAuthState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UserModel? user)? authenticated,
+    TResult Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult Function()? googleSignInFailure,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -925,6 +962,10 @@ class _$LoadingAuthStateImpl implements LoadingAuthState {
     required TResult Function(InitialAuthState value) initial,
     required TResult Function(LoadingAuthState value) loading,
     required TResult Function(AuthenticatedAuthState value) authenticated,
+    required TResult Function(GoogleSignInSuccessAuthState value)
+        googleSignInSuccess,
+    required TResult Function(GoogleSignInFailureAuthState value)
+        googleSignInFailure,
     required TResult Function(UnauthenticatedAuthState value) unauthenticated,
     required TResult Function(ErrorAuthState value) error,
   }) {
@@ -937,6 +978,8 @@ class _$LoadingAuthStateImpl implements LoadingAuthState {
     TResult? Function(InitialAuthState value)? initial,
     TResult? Function(LoadingAuthState value)? loading,
     TResult? Function(AuthenticatedAuthState value)? authenticated,
+    TResult? Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult? Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult? Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult? Function(ErrorAuthState value)? error,
   }) {
@@ -949,6 +992,8 @@ class _$LoadingAuthStateImpl implements LoadingAuthState {
     TResult Function(InitialAuthState value)? initial,
     TResult Function(LoadingAuthState value)? loading,
     TResult Function(AuthenticatedAuthState value)? authenticated,
+    TResult Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult Function(ErrorAuthState value)? error,
     required TResult orElse(),
@@ -1035,6 +1080,9 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(UserModel? user) authenticated,
+    required TResult Function(UserCredential? userCredential)
+        googleSignInSuccess,
+    required TResult Function() googleSignInFailure,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) {
@@ -1047,6 +1095,8 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UserModel? user)? authenticated,
+    TResult? Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult? Function()? googleSignInFailure,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) {
@@ -1059,6 +1109,8 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UserModel? user)? authenticated,
+    TResult Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult Function()? googleSignInFailure,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -1075,6 +1127,10 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
     required TResult Function(InitialAuthState value) initial,
     required TResult Function(LoadingAuthState value) loading,
     required TResult Function(AuthenticatedAuthState value) authenticated,
+    required TResult Function(GoogleSignInSuccessAuthState value)
+        googleSignInSuccess,
+    required TResult Function(GoogleSignInFailureAuthState value)
+        googleSignInFailure,
     required TResult Function(UnauthenticatedAuthState value) unauthenticated,
     required TResult Function(ErrorAuthState value) error,
   }) {
@@ -1087,6 +1143,8 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
     TResult? Function(InitialAuthState value)? initial,
     TResult? Function(LoadingAuthState value)? loading,
     TResult? Function(AuthenticatedAuthState value)? authenticated,
+    TResult? Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult? Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult? Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult? Function(ErrorAuthState value)? error,
   }) {
@@ -1099,6 +1157,8 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
     TResult Function(InitialAuthState value)? initial,
     TResult Function(LoadingAuthState value)? loading,
     TResult Function(AuthenticatedAuthState value)? authenticated,
+    TResult Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult Function(ErrorAuthState value)? error,
     required TResult orElse(),
@@ -1118,6 +1178,323 @@ abstract class AuthenticatedAuthState implements AuthenticationState {
   @JsonKey(ignore: true)
   _$$AuthenticatedAuthStateImplCopyWith<_$AuthenticatedAuthStateImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoogleSignInSuccessAuthStateImplCopyWith<$Res> {
+  factory _$$GoogleSignInSuccessAuthStateImplCopyWith(
+          _$GoogleSignInSuccessAuthStateImpl value,
+          $Res Function(_$GoogleSignInSuccessAuthStateImpl) then) =
+      __$$GoogleSignInSuccessAuthStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserCredential? userCredential});
+}
+
+/// @nodoc
+class __$$GoogleSignInSuccessAuthStateImplCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res,
+        _$GoogleSignInSuccessAuthStateImpl>
+    implements _$$GoogleSignInSuccessAuthStateImplCopyWith<$Res> {
+  __$$GoogleSignInSuccessAuthStateImplCopyWithImpl(
+      _$GoogleSignInSuccessAuthStateImpl _value,
+      $Res Function(_$GoogleSignInSuccessAuthStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userCredential = freezed,
+  }) {
+    return _then(_$GoogleSignInSuccessAuthStateImpl(
+      freezed == userCredential
+          ? _value.userCredential
+          : userCredential // ignore: cast_nullable_to_non_nullable
+              as UserCredential?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoogleSignInSuccessAuthStateImpl
+    implements GoogleSignInSuccessAuthState {
+  const _$GoogleSignInSuccessAuthStateImpl(this.userCredential);
+
+  @override
+  final UserCredential? userCredential;
+
+  @override
+  String toString() {
+    return 'AuthenticationState.googleSignInSuccess(userCredential: $userCredential)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleSignInSuccessAuthStateImpl &&
+            (identical(other.userCredential, userCredential) ||
+                other.userCredential == userCredential));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userCredential);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleSignInSuccessAuthStateImplCopyWith<
+          _$GoogleSignInSuccessAuthStateImpl>
+      get copyWith => __$$GoogleSignInSuccessAuthStateImplCopyWithImpl<
+          _$GoogleSignInSuccessAuthStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel? user) authenticated,
+    required TResult Function(UserCredential? userCredential)
+        googleSignInSuccess,
+    required TResult Function() googleSignInFailure,
+    required TResult Function() unauthenticated,
+    required TResult Function(String errorMessage) error,
+  }) {
+    return googleSignInSuccess(userCredential);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel? user)? authenticated,
+    TResult? Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult? Function()? googleSignInFailure,
+    TResult? Function()? unauthenticated,
+    TResult? Function(String errorMessage)? error,
+  }) {
+    return googleSignInSuccess?.call(userCredential);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel? user)? authenticated,
+    TResult Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult Function()? googleSignInFailure,
+    TResult Function()? unauthenticated,
+    TResult Function(String errorMessage)? error,
+    required TResult orElse(),
+  }) {
+    if (googleSignInSuccess != null) {
+      return googleSignInSuccess(userCredential);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialAuthState value) initial,
+    required TResult Function(LoadingAuthState value) loading,
+    required TResult Function(AuthenticatedAuthState value) authenticated,
+    required TResult Function(GoogleSignInSuccessAuthState value)
+        googleSignInSuccess,
+    required TResult Function(GoogleSignInFailureAuthState value)
+        googleSignInFailure,
+    required TResult Function(UnauthenticatedAuthState value) unauthenticated,
+    required TResult Function(ErrorAuthState value) error,
+  }) {
+    return googleSignInSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialAuthState value)? initial,
+    TResult? Function(LoadingAuthState value)? loading,
+    TResult? Function(AuthenticatedAuthState value)? authenticated,
+    TResult? Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult? Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
+    TResult? Function(UnauthenticatedAuthState value)? unauthenticated,
+    TResult? Function(ErrorAuthState value)? error,
+  }) {
+    return googleSignInSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialAuthState value)? initial,
+    TResult Function(LoadingAuthState value)? loading,
+    TResult Function(AuthenticatedAuthState value)? authenticated,
+    TResult Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
+    TResult Function(UnauthenticatedAuthState value)? unauthenticated,
+    TResult Function(ErrorAuthState value)? error,
+    required TResult orElse(),
+  }) {
+    if (googleSignInSuccess != null) {
+      return googleSignInSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoogleSignInSuccessAuthState implements AuthenticationState {
+  const factory GoogleSignInSuccessAuthState(
+          final UserCredential? userCredential) =
+      _$GoogleSignInSuccessAuthStateImpl;
+
+  UserCredential? get userCredential;
+  @JsonKey(ignore: true)
+  _$$GoogleSignInSuccessAuthStateImplCopyWith<
+          _$GoogleSignInSuccessAuthStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoogleSignInFailureAuthStateImplCopyWith<$Res> {
+  factory _$$GoogleSignInFailureAuthStateImplCopyWith(
+          _$GoogleSignInFailureAuthStateImpl value,
+          $Res Function(_$GoogleSignInFailureAuthStateImpl) then) =
+      __$$GoogleSignInFailureAuthStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GoogleSignInFailureAuthStateImplCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res,
+        _$GoogleSignInFailureAuthStateImpl>
+    implements _$$GoogleSignInFailureAuthStateImplCopyWith<$Res> {
+  __$$GoogleSignInFailureAuthStateImplCopyWithImpl(
+      _$GoogleSignInFailureAuthStateImpl _value,
+      $Res Function(_$GoogleSignInFailureAuthStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GoogleSignInFailureAuthStateImpl
+    implements GoogleSignInFailureAuthState {
+  const _$GoogleSignInFailureAuthStateImpl();
+
+  @override
+  String toString() {
+    return 'AuthenticationState.googleSignInFailure()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleSignInFailureAuthStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel? user) authenticated,
+    required TResult Function(UserCredential? userCredential)
+        googleSignInSuccess,
+    required TResult Function() googleSignInFailure,
+    required TResult Function() unauthenticated,
+    required TResult Function(String errorMessage) error,
+  }) {
+    return googleSignInFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel? user)? authenticated,
+    TResult? Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult? Function()? googleSignInFailure,
+    TResult? Function()? unauthenticated,
+    TResult? Function(String errorMessage)? error,
+  }) {
+    return googleSignInFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel? user)? authenticated,
+    TResult Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult Function()? googleSignInFailure,
+    TResult Function()? unauthenticated,
+    TResult Function(String errorMessage)? error,
+    required TResult orElse(),
+  }) {
+    if (googleSignInFailure != null) {
+      return googleSignInFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialAuthState value) initial,
+    required TResult Function(LoadingAuthState value) loading,
+    required TResult Function(AuthenticatedAuthState value) authenticated,
+    required TResult Function(GoogleSignInSuccessAuthState value)
+        googleSignInSuccess,
+    required TResult Function(GoogleSignInFailureAuthState value)
+        googleSignInFailure,
+    required TResult Function(UnauthenticatedAuthState value) unauthenticated,
+    required TResult Function(ErrorAuthState value) error,
+  }) {
+    return googleSignInFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialAuthState value)? initial,
+    TResult? Function(LoadingAuthState value)? loading,
+    TResult? Function(AuthenticatedAuthState value)? authenticated,
+    TResult? Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult? Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
+    TResult? Function(UnauthenticatedAuthState value)? unauthenticated,
+    TResult? Function(ErrorAuthState value)? error,
+  }) {
+    return googleSignInFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialAuthState value)? initial,
+    TResult Function(LoadingAuthState value)? loading,
+    TResult Function(AuthenticatedAuthState value)? authenticated,
+    TResult Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
+    TResult Function(UnauthenticatedAuthState value)? unauthenticated,
+    TResult Function(ErrorAuthState value)? error,
+    required TResult orElse(),
+  }) {
+    if (googleSignInFailure != null) {
+      return googleSignInFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoogleSignInFailureAuthState implements AuthenticationState {
+  const factory GoogleSignInFailureAuthState() =
+      _$GoogleSignInFailureAuthStateImpl;
 }
 
 /// @nodoc
@@ -1165,6 +1542,9 @@ class _$UnauthenticatedAuthStateImpl implements UnauthenticatedAuthState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(UserModel? user) authenticated,
+    required TResult Function(UserCredential? userCredential)
+        googleSignInSuccess,
+    required TResult Function() googleSignInFailure,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) {
@@ -1177,6 +1557,8 @@ class _$UnauthenticatedAuthStateImpl implements UnauthenticatedAuthState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UserModel? user)? authenticated,
+    TResult? Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult? Function()? googleSignInFailure,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) {
@@ -1189,6 +1571,8 @@ class _$UnauthenticatedAuthStateImpl implements UnauthenticatedAuthState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UserModel? user)? authenticated,
+    TResult Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult Function()? googleSignInFailure,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -1205,6 +1589,10 @@ class _$UnauthenticatedAuthStateImpl implements UnauthenticatedAuthState {
     required TResult Function(InitialAuthState value) initial,
     required TResult Function(LoadingAuthState value) loading,
     required TResult Function(AuthenticatedAuthState value) authenticated,
+    required TResult Function(GoogleSignInSuccessAuthState value)
+        googleSignInSuccess,
+    required TResult Function(GoogleSignInFailureAuthState value)
+        googleSignInFailure,
     required TResult Function(UnauthenticatedAuthState value) unauthenticated,
     required TResult Function(ErrorAuthState value) error,
   }) {
@@ -1217,6 +1605,8 @@ class _$UnauthenticatedAuthStateImpl implements UnauthenticatedAuthState {
     TResult? Function(InitialAuthState value)? initial,
     TResult? Function(LoadingAuthState value)? loading,
     TResult? Function(AuthenticatedAuthState value)? authenticated,
+    TResult? Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult? Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult? Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult? Function(ErrorAuthState value)? error,
   }) {
@@ -1229,6 +1619,8 @@ class _$UnauthenticatedAuthStateImpl implements UnauthenticatedAuthState {
     TResult Function(InitialAuthState value)? initial,
     TResult Function(LoadingAuthState value)? loading,
     TResult Function(AuthenticatedAuthState value)? authenticated,
+    TResult Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult Function(ErrorAuthState value)? error,
     required TResult orElse(),
@@ -1313,6 +1705,9 @@ class _$ErrorAuthStateImpl implements ErrorAuthState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(UserModel? user) authenticated,
+    required TResult Function(UserCredential? userCredential)
+        googleSignInSuccess,
+    required TResult Function() googleSignInFailure,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) {
@@ -1325,6 +1720,8 @@ class _$ErrorAuthStateImpl implements ErrorAuthState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(UserModel? user)? authenticated,
+    TResult? Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult? Function()? googleSignInFailure,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) {
@@ -1337,6 +1734,8 @@ class _$ErrorAuthStateImpl implements ErrorAuthState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(UserModel? user)? authenticated,
+    TResult Function(UserCredential? userCredential)? googleSignInSuccess,
+    TResult Function()? googleSignInFailure,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -1353,6 +1752,10 @@ class _$ErrorAuthStateImpl implements ErrorAuthState {
     required TResult Function(InitialAuthState value) initial,
     required TResult Function(LoadingAuthState value) loading,
     required TResult Function(AuthenticatedAuthState value) authenticated,
+    required TResult Function(GoogleSignInSuccessAuthState value)
+        googleSignInSuccess,
+    required TResult Function(GoogleSignInFailureAuthState value)
+        googleSignInFailure,
     required TResult Function(UnauthenticatedAuthState value) unauthenticated,
     required TResult Function(ErrorAuthState value) error,
   }) {
@@ -1365,6 +1768,8 @@ class _$ErrorAuthStateImpl implements ErrorAuthState {
     TResult? Function(InitialAuthState value)? initial,
     TResult? Function(LoadingAuthState value)? loading,
     TResult? Function(AuthenticatedAuthState value)? authenticated,
+    TResult? Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult? Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult? Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult? Function(ErrorAuthState value)? error,
   }) {
@@ -1377,6 +1782,8 @@ class _$ErrorAuthStateImpl implements ErrorAuthState {
     TResult Function(InitialAuthState value)? initial,
     TResult Function(LoadingAuthState value)? loading,
     TResult Function(AuthenticatedAuthState value)? authenticated,
+    TResult Function(GoogleSignInSuccessAuthState value)? googleSignInSuccess,
+    TResult Function(GoogleSignInFailureAuthState value)? googleSignInFailure,
     TResult Function(UnauthenticatedAuthState value)? unauthenticated,
     TResult Function(ErrorAuthState value)? error,
     required TResult orElse(),

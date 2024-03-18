@@ -143,11 +143,35 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(
-                        onPressed: () {
-                          // Handle Google SignIn
+                      BlocConsumer<AuthenticationBloc, AuthenticationState>(
+                        listener: (context, state) {
+                          if (state is GoogleSignInSuccessAuthState) {
+                            context.go('/dashboard');
+                          } else if (state is GoogleSignInFailureAuthState) {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const AlertDialog(
+                                  title: Text('Invalid User'),
+                                  content: Image(
+                                    image: AssetImage(
+                                        'assets/icons/user_not_found.png'),
+                                  ),
+                                );
+                              },
+                            );
+                          }
                         },
-                        icon: Image.asset('assets/icons/google_icon.png'),
+                        builder: (context, state) {
+                          return IconButton(
+                            onPressed: () {
+                              // Handle Google SignIn
+                              BlocProvider.of<AuthenticationBloc>(context)
+                                  .add(const GoogleSignInAuthEvent());
+                            },
+                            icon: Image.asset('assets/icons/google_icon.png'),
+                          );
+                        },
                       ),
                       IconButton(
                         onPressed: () {
@@ -172,9 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             text: 'SignUp',
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                // Navigate to SignUpScreen
-                                Navigator.of(context)
-                                    .pushNamed('/signUpScreen');
+                                context.go('/signUpScreen');
                               },
                             style: GoogleFonts.bowlbyOneSc(
                               color: Colors.yellow,
