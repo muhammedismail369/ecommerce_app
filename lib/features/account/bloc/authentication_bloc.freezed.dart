@@ -16,43 +16,55 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AuthenticationEvent {
-  String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) signIn,
+    required TResult Function(String email, String password) signUpUser,
+    required TResult Function(String email, String password) signInUser,
+    required TResult Function() googleSignIn,
+    required TResult Function() signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? signIn,
+    TResult? Function(String email, String password)? signUpUser,
+    TResult? Function(String email, String password)? signInUser,
+    TResult? Function()? googleSignIn,
+    TResult? Function()? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signIn,
+    TResult Function(String email, String password)? signUpUser,
+    TResult Function(String email, String password)? signInUser,
+    TResult Function()? googleSignIn,
+    TResult Function()? signOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SignInWithCredentialsAuthEvent value) signIn,
+    required TResult Function(SignUpWithCredentialsAuthEvent value) signUpUser,
+    required TResult Function(SignInWithCredentialsAuthEvent value) signInUser,
+    required TResult Function(GoogleSignInAuthEvent value) googleSignIn,
+    required TResult Function(SignOutAuthEvent value) signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SignInWithCredentialsAuthEvent value)? signIn,
+    TResult? Function(SignUpWithCredentialsAuthEvent value)? signUpUser,
+    TResult? Function(SignInWithCredentialsAuthEvent value)? signInUser,
+    TResult? Function(GoogleSignInAuthEvent value)? googleSignIn,
+    TResult? Function(SignOutAuthEvent value)? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SignInWithCredentialsAuthEvent value)? signIn,
+    TResult Function(SignUpWithCredentialsAuthEvent value)? signUpUser,
+    TResult Function(SignInWithCredentialsAuthEvent value)? signInUser,
+    TResult Function(GoogleSignInAuthEvent value)? googleSignIn,
+    TResult Function(SignOutAuthEvent value)? signOut,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $AuthenticationEventCopyWith<AuthenticationEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -61,8 +73,6 @@ abstract class $AuthenticationEventCopyWith<$Res> {
   factory $AuthenticationEventCopyWith(
           AuthenticationEvent value, $Res Function(AuthenticationEvent) then) =
       _$AuthenticationEventCopyWithImpl<$Res, AuthenticationEvent>;
-  @useResult
-  $Res call({String email, String password});
 }
 
 /// @nodoc
@@ -74,6 +84,27 @@ class _$AuthenticationEventCopyWithImpl<$Res, $Val extends AuthenticationEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$SignUpWithCredentialsAuthEventImplCopyWith<$Res> {
+  factory _$$SignUpWithCredentialsAuthEventImplCopyWith(
+          _$SignUpWithCredentialsAuthEventImpl value,
+          $Res Function(_$SignUpWithCredentialsAuthEventImpl) then) =
+      __$$SignUpWithCredentialsAuthEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String email, String password});
+}
+
+/// @nodoc
+class __$$SignUpWithCredentialsAuthEventImplCopyWithImpl<$Res>
+    extends _$AuthenticationEventCopyWithImpl<$Res,
+        _$SignUpWithCredentialsAuthEventImpl>
+    implements _$$SignUpWithCredentialsAuthEventImplCopyWith<$Res> {
+  __$$SignUpWithCredentialsAuthEventImplCopyWithImpl(
+      _$SignUpWithCredentialsAuthEventImpl _value,
+      $Res Function(_$SignUpWithCredentialsAuthEventImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -81,7 +112,7 @@ class _$AuthenticationEventCopyWithImpl<$Res, $Val extends AuthenticationEvent>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_$SignUpWithCredentialsAuthEventImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -90,18 +121,142 @@ class _$AuthenticationEventCopyWithImpl<$Res, $Val extends AuthenticationEvent>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-    ) as $Val);
+    ));
   }
 }
 
 /// @nodoc
-abstract class _$$SignInWithCredentialsAuthEventImplCopyWith<$Res>
-    implements $AuthenticationEventCopyWith<$Res> {
+
+class _$SignUpWithCredentialsAuthEventImpl
+    implements SignUpWithCredentialsAuthEvent {
+  const _$SignUpWithCredentialsAuthEventImpl(
+      {required this.email, required this.password});
+
+  @override
+  final String email;
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'AuthenticationEvent.signUpUser(email: $email, password: $password)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignUpWithCredentialsAuthEventImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignUpWithCredentialsAuthEventImplCopyWith<
+          _$SignUpWithCredentialsAuthEventImpl>
+      get copyWith => __$$SignUpWithCredentialsAuthEventImplCopyWithImpl<
+          _$SignUpWithCredentialsAuthEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password) signUpUser,
+    required TResult Function(String email, String password) signInUser,
+    required TResult Function() googleSignIn,
+    required TResult Function() signOut,
+  }) {
+    return signUpUser(email, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)? signUpUser,
+    TResult? Function(String email, String password)? signInUser,
+    TResult? Function()? googleSignIn,
+    TResult? Function()? signOut,
+  }) {
+    return signUpUser?.call(email, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? signUpUser,
+    TResult Function(String email, String password)? signInUser,
+    TResult Function()? googleSignIn,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (signUpUser != null) {
+      return signUpUser(email, password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignUpWithCredentialsAuthEvent value) signUpUser,
+    required TResult Function(SignInWithCredentialsAuthEvent value) signInUser,
+    required TResult Function(GoogleSignInAuthEvent value) googleSignIn,
+    required TResult Function(SignOutAuthEvent value) signOut,
+  }) {
+    return signUpUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignUpWithCredentialsAuthEvent value)? signUpUser,
+    TResult? Function(SignInWithCredentialsAuthEvent value)? signInUser,
+    TResult? Function(GoogleSignInAuthEvent value)? googleSignIn,
+    TResult? Function(SignOutAuthEvent value)? signOut,
+  }) {
+    return signUpUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpWithCredentialsAuthEvent value)? signUpUser,
+    TResult Function(SignInWithCredentialsAuthEvent value)? signInUser,
+    TResult Function(GoogleSignInAuthEvent value)? googleSignIn,
+    TResult Function(SignOutAuthEvent value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (signUpUser != null) {
+      return signUpUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignUpWithCredentialsAuthEvent implements AuthenticationEvent {
+  const factory SignUpWithCredentialsAuthEvent(
+      {required final String email,
+      required final String password}) = _$SignUpWithCredentialsAuthEventImpl;
+
+  String get email;
+  String get password;
+  @JsonKey(ignore: true)
+  _$$SignUpWithCredentialsAuthEventImplCopyWith<
+          _$SignUpWithCredentialsAuthEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignInWithCredentialsAuthEventImplCopyWith<$Res> {
   factory _$$SignInWithCredentialsAuthEventImplCopyWith(
           _$SignInWithCredentialsAuthEventImpl value,
           $Res Function(_$SignInWithCredentialsAuthEventImpl) then) =
       __$$SignInWithCredentialsAuthEventImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({String email, String password});
 }
@@ -149,7 +304,7 @@ class _$SignInWithCredentialsAuthEventImpl
 
   @override
   String toString() {
-    return 'AuthenticationEvent.signIn(email: $email, password: $password)';
+    return 'AuthenticationEvent.signInUser(email: $email, password: $password)';
   }
 
   @override
@@ -176,27 +331,36 @@ class _$SignInWithCredentialsAuthEventImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) signIn,
+    required TResult Function(String email, String password) signUpUser,
+    required TResult Function(String email, String password) signInUser,
+    required TResult Function() googleSignIn,
+    required TResult Function() signOut,
   }) {
-    return signIn(email, password);
+    return signInUser(email, password);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? signIn,
+    TResult? Function(String email, String password)? signUpUser,
+    TResult? Function(String email, String password)? signInUser,
+    TResult? Function()? googleSignIn,
+    TResult? Function()? signOut,
   }) {
-    return signIn?.call(email, password);
+    return signInUser?.call(email, password);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signIn,
+    TResult Function(String email, String password)? signUpUser,
+    TResult Function(String email, String password)? signInUser,
+    TResult Function()? googleSignIn,
+    TResult Function()? signOut,
     required TResult orElse(),
   }) {
-    if (signIn != null) {
-      return signIn(email, password);
+    if (signInUser != null) {
+      return signInUser(email, password);
     }
     return orElse();
   }
@@ -204,27 +368,36 @@ class _$SignInWithCredentialsAuthEventImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SignInWithCredentialsAuthEvent value) signIn,
+    required TResult Function(SignUpWithCredentialsAuthEvent value) signUpUser,
+    required TResult Function(SignInWithCredentialsAuthEvent value) signInUser,
+    required TResult Function(GoogleSignInAuthEvent value) googleSignIn,
+    required TResult Function(SignOutAuthEvent value) signOut,
   }) {
-    return signIn(this);
+    return signInUser(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SignInWithCredentialsAuthEvent value)? signIn,
+    TResult? Function(SignUpWithCredentialsAuthEvent value)? signUpUser,
+    TResult? Function(SignInWithCredentialsAuthEvent value)? signInUser,
+    TResult? Function(GoogleSignInAuthEvent value)? googleSignIn,
+    TResult? Function(SignOutAuthEvent value)? signOut,
   }) {
-    return signIn?.call(this);
+    return signInUser?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SignInWithCredentialsAuthEvent value)? signIn,
+    TResult Function(SignUpWithCredentialsAuthEvent value)? signUpUser,
+    TResult Function(SignInWithCredentialsAuthEvent value)? signInUser,
+    TResult Function(GoogleSignInAuthEvent value)? googleSignIn,
+    TResult Function(SignOutAuthEvent value)? signOut,
     required TResult orElse(),
   }) {
-    if (signIn != null) {
-      return signIn(this);
+    if (signInUser != null) {
+      return signInUser(this);
     }
     return orElse();
   }
@@ -235,15 +408,242 @@ abstract class SignInWithCredentialsAuthEvent implements AuthenticationEvent {
       {required final String email,
       required final String password}) = _$SignInWithCredentialsAuthEventImpl;
 
-  @override
   String get email;
-  @override
   String get password;
-  @override
   @JsonKey(ignore: true)
   _$$SignInWithCredentialsAuthEventImplCopyWith<
           _$SignInWithCredentialsAuthEventImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoogleSignInAuthEventImplCopyWith<$Res> {
+  factory _$$GoogleSignInAuthEventImplCopyWith(
+          _$GoogleSignInAuthEventImpl value,
+          $Res Function(_$GoogleSignInAuthEventImpl) then) =
+      __$$GoogleSignInAuthEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GoogleSignInAuthEventImplCopyWithImpl<$Res>
+    extends _$AuthenticationEventCopyWithImpl<$Res, _$GoogleSignInAuthEventImpl>
+    implements _$$GoogleSignInAuthEventImplCopyWith<$Res> {
+  __$$GoogleSignInAuthEventImplCopyWithImpl(_$GoogleSignInAuthEventImpl _value,
+      $Res Function(_$GoogleSignInAuthEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GoogleSignInAuthEventImpl implements GoogleSignInAuthEvent {
+  const _$GoogleSignInAuthEventImpl();
+
+  @override
+  String toString() {
+    return 'AuthenticationEvent.googleSignIn()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleSignInAuthEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password) signUpUser,
+    required TResult Function(String email, String password) signInUser,
+    required TResult Function() googleSignIn,
+    required TResult Function() signOut,
+  }) {
+    return googleSignIn();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)? signUpUser,
+    TResult? Function(String email, String password)? signInUser,
+    TResult? Function()? googleSignIn,
+    TResult? Function()? signOut,
+  }) {
+    return googleSignIn?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? signUpUser,
+    TResult Function(String email, String password)? signInUser,
+    TResult Function()? googleSignIn,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (googleSignIn != null) {
+      return googleSignIn();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignUpWithCredentialsAuthEvent value) signUpUser,
+    required TResult Function(SignInWithCredentialsAuthEvent value) signInUser,
+    required TResult Function(GoogleSignInAuthEvent value) googleSignIn,
+    required TResult Function(SignOutAuthEvent value) signOut,
+  }) {
+    return googleSignIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignUpWithCredentialsAuthEvent value)? signUpUser,
+    TResult? Function(SignInWithCredentialsAuthEvent value)? signInUser,
+    TResult? Function(GoogleSignInAuthEvent value)? googleSignIn,
+    TResult? Function(SignOutAuthEvent value)? signOut,
+  }) {
+    return googleSignIn?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpWithCredentialsAuthEvent value)? signUpUser,
+    TResult Function(SignInWithCredentialsAuthEvent value)? signInUser,
+    TResult Function(GoogleSignInAuthEvent value)? googleSignIn,
+    TResult Function(SignOutAuthEvent value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (googleSignIn != null) {
+      return googleSignIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoogleSignInAuthEvent implements AuthenticationEvent {
+  const factory GoogleSignInAuthEvent() = _$GoogleSignInAuthEventImpl;
+}
+
+/// @nodoc
+abstract class _$$SignOutAuthEventImplCopyWith<$Res> {
+  factory _$$SignOutAuthEventImplCopyWith(_$SignOutAuthEventImpl value,
+          $Res Function(_$SignOutAuthEventImpl) then) =
+      __$$SignOutAuthEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SignOutAuthEventImplCopyWithImpl<$Res>
+    extends _$AuthenticationEventCopyWithImpl<$Res, _$SignOutAuthEventImpl>
+    implements _$$SignOutAuthEventImplCopyWith<$Res> {
+  __$$SignOutAuthEventImplCopyWithImpl(_$SignOutAuthEventImpl _value,
+      $Res Function(_$SignOutAuthEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SignOutAuthEventImpl implements SignOutAuthEvent {
+  const _$SignOutAuthEventImpl();
+
+  @override
+  String toString() {
+    return 'AuthenticationEvent.signOut()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SignOutAuthEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password) signUpUser,
+    required TResult Function(String email, String password) signInUser,
+    required TResult Function() googleSignIn,
+    required TResult Function() signOut,
+  }) {
+    return signOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)? signUpUser,
+    TResult? Function(String email, String password)? signInUser,
+    TResult? Function()? googleSignIn,
+    TResult? Function()? signOut,
+  }) {
+    return signOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? signUpUser,
+    TResult Function(String email, String password)? signInUser,
+    TResult Function()? googleSignIn,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (signOut != null) {
+      return signOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignUpWithCredentialsAuthEvent value) signUpUser,
+    required TResult Function(SignInWithCredentialsAuthEvent value) signInUser,
+    required TResult Function(GoogleSignInAuthEvent value) googleSignIn,
+    required TResult Function(SignOutAuthEvent value) signOut,
+  }) {
+    return signOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignUpWithCredentialsAuthEvent value)? signUpUser,
+    TResult? Function(SignInWithCredentialsAuthEvent value)? signInUser,
+    TResult? Function(GoogleSignInAuthEvent value)? googleSignIn,
+    TResult? Function(SignOutAuthEvent value)? signOut,
+  }) {
+    return signOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpWithCredentialsAuthEvent value)? signUpUser,
+    TResult Function(SignInWithCredentialsAuthEvent value)? signInUser,
+    TResult Function(GoogleSignInAuthEvent value)? googleSignIn,
+    TResult Function(SignOutAuthEvent value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (signOut != null) {
+      return signOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOutAuthEvent implements AuthenticationEvent {
+  const factory SignOutAuthEvent() = _$SignOutAuthEventImpl;
 }
 
 /// @nodoc
@@ -252,7 +652,7 @@ mixin _$AuthenticationState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) authenticated,
+    required TResult Function(UserModel? user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) =>
@@ -261,7 +661,7 @@ mixin _$AuthenticationState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? authenticated,
+    TResult? Function(UserModel? user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) =>
@@ -270,7 +670,7 @@ mixin _$AuthenticationState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? authenticated,
+    TResult Function(UserModel? user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -364,7 +764,7 @@ class _$InitialAuthStateImpl implements InitialAuthState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) authenticated,
+    required TResult Function(UserModel? user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) {
@@ -376,7 +776,7 @@ class _$InitialAuthStateImpl implements InitialAuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? authenticated,
+    TResult? Function(UserModel? user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) {
@@ -388,7 +788,7 @@ class _$InitialAuthStateImpl implements InitialAuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? authenticated,
+    TResult Function(UserModel? user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -484,7 +884,7 @@ class _$LoadingAuthStateImpl implements LoadingAuthState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) authenticated,
+    required TResult Function(UserModel? user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) {
@@ -496,7 +896,7 @@ class _$LoadingAuthStateImpl implements LoadingAuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? authenticated,
+    TResult? Function(UserModel? user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) {
@@ -508,7 +908,7 @@ class _$LoadingAuthStateImpl implements LoadingAuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? authenticated,
+    TResult Function(UserModel? user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -571,7 +971,7 @@ abstract class _$$AuthenticatedAuthStateImplCopyWith<$Res> {
           $Res Function(_$AuthenticatedAuthStateImpl) then) =
       __$$AuthenticatedAuthStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({User? user});
+  $Res call({UserModel? user});
 }
 
 /// @nodoc
@@ -593,7 +993,7 @@ class __$$AuthenticatedAuthStateImplCopyWithImpl<$Res>
       freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserModel?,
     ));
   }
 }
@@ -604,7 +1004,7 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
   const _$AuthenticatedAuthStateImpl(this.user);
 
   @override
-  final User? user;
+  final UserModel? user;
 
   @override
   String toString() {
@@ -634,7 +1034,7 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) authenticated,
+    required TResult Function(UserModel? user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) {
@@ -646,7 +1046,7 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? authenticated,
+    TResult? Function(UserModel? user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) {
@@ -658,7 +1058,7 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? authenticated,
+    TResult Function(UserModel? user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -711,10 +1111,10 @@ class _$AuthenticatedAuthStateImpl implements AuthenticatedAuthState {
 }
 
 abstract class AuthenticatedAuthState implements AuthenticationState {
-  const factory AuthenticatedAuthState(final User? user) =
+  const factory AuthenticatedAuthState(final UserModel? user) =
       _$AuthenticatedAuthStateImpl;
 
-  User? get user;
+  UserModel? get user;
   @JsonKey(ignore: true)
   _$$AuthenticatedAuthStateImplCopyWith<_$AuthenticatedAuthStateImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -764,7 +1164,7 @@ class _$UnauthenticatedAuthStateImpl implements UnauthenticatedAuthState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) authenticated,
+    required TResult Function(UserModel? user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) {
@@ -776,7 +1176,7 @@ class _$UnauthenticatedAuthStateImpl implements UnauthenticatedAuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? authenticated,
+    TResult? Function(UserModel? user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) {
@@ -788,7 +1188,7 @@ class _$UnauthenticatedAuthStateImpl implements UnauthenticatedAuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? authenticated,
+    TResult Function(UserModel? user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
@@ -912,7 +1312,7 @@ class _$ErrorAuthStateImpl implements ErrorAuthState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) authenticated,
+    required TResult Function(UserModel? user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(String errorMessage) error,
   }) {
@@ -924,7 +1324,7 @@ class _$ErrorAuthStateImpl implements ErrorAuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? authenticated,
+    TResult? Function(UserModel? user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(String errorMessage)? error,
   }) {
@@ -936,7 +1336,7 @@ class _$ErrorAuthStateImpl implements ErrorAuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? authenticated,
+    TResult Function(UserModel? user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),

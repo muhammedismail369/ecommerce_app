@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:ecommerce_app/features/account/data/model/user_model.dart';
 import 'package:ecommerce_app/features/account/data/repo/authentication_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -12,19 +13,49 @@ class AuthenticationBloc
   final AuthenticationRepo authenticationRepo;
   AuthenticationBloc({required this.authenticationRepo})
       : super(const InitialAuthState()) {
-    on<SignInWithCredentialsAuthEvent>(signInRequested);
-  }
-  Stream<AuthenticationState> signInRequested(
-      SignInWithCredentialsAuthEvent event,
-      Emitter<AuthenticationState> emit) async* {
-    try {
-      final user = await authenticationRepo.signInWithEmailAndPassword(
-        event.email,
-        event.password,
-      );
-      yield AuthenticatedAuthState(user);
-    } catch (e) {
-      yield ErrorAuthState("Error signing in with email and password: $e");
-    }
+    on<SignUpWithCredentialsAuthEvent>((event, emit) async {
+      emit(const AuthenticationState.loading());
+      try {
+        final UserModel? user = await authenticationRepo.signUpUser(
+          event.email,
+          event.password,
+        );
+        if (user != null) {
+          emit(AuthenticationState.authenticated(user));
+        }
+      } catch (e) {
+        print(e.toString());
+      }
+      emit(const AuthenticationState.loading());
+    });
+
+    on<SignInWithCredentialsAuthEvent>((event, emit) async {
+      emit(const AuthenticationState.loading());
+      try {
+        final UserModel? user = await authenticationRepo.signInUser(
+          event.email,
+          event.password,
+        );
+        if (user != null) {
+          emit(AuthenticationState.authenticated(user));
+        } else {
+          emit(const AuthenticationState.error('Invalid User'));
+        }
+      } catch (e) {
+        print(e.toString());
+      }
+      emit(const AuthenticationState.loading());
+    });
+
+    on<SignOutAuthEvent>((event, emit) {
+      emit(const AuthenticationState.loading());
+      try {
+        authenticationRepo.signOutUser();
+      } catch (e) {
+        print('error');
+        print(e.toString());
+      }
+      emit(const AuthenticationState.loading());
+    });
   }
 }

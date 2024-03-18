@@ -7,6 +7,7 @@ class PrimaryTextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(horizontal: 10.0),
           filled: true,
